@@ -1,0 +1,55 @@
+{
+  "name": "smtp-jyavani",
+  "version": "1.0.0",
+  "title": "SMTP Jyavani",
+  "description": "Secure SMTP and STARTTLS transport for the Jyavani Core Mail API.",
+  "author": "Adam Muiz",
+  "author_uri": "https://jyavani.com/member/adammuiz/",
+  "homepage": "https://github.com/adammuizweb/smtp-jyavani",
+  "github_url": "https://github.com/adammuizweb/smtp-jyavani",
+  "license": "MIT",
+  "icon": "icon.svg",
+  "requires": {
+    "jyavani": ">=2.3.82",
+    "php": ">=8.1",
+    "extensions": ["json", "mbstring", "openssl", "pdo", "sodium"],
+    "plugins": {}
+  },
+  "admin": {
+    "pages": [
+      {
+        "route": "admin/settings/smtp-jyavani",
+        "file": "admin/settings.php",
+        "title": "SMTP Jyavani",
+        "site_owner": true,
+        "roles": ["admin"]
+      },
+      {
+        "route": "admin/settings/smtp-jyavani/save",
+        "file": "admin/save.php",
+        "title": "Save SMTP Settings",
+        "hidden": true,
+        "site_owner": true,
+        "roles": ["admin"]
+      }
+    ],
+    "nav": [
+      {
+        "label": "SMTP",
+        "icon": "mail",
+        "page": "admin/settings/smtp-jyavani",
+        "parent": "settings",
+        "site_owner": true,
+        "roles": ["admin"]
+      }
+    ]
+  },
+  "static": {
+    "copy": [
+      {
+        "from": "assets/css/admin.css",
+        "to": "static/plugins/smtp-jyavani/admin.css"
+      }
+    ]
+  }
+}
