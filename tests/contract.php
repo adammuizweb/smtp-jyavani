@@ -13,6 +13,9 @@ $check = static function (bool $condition, string $message) use (&$failures, &$c
 $manifest = json_decode((string)file_get_contents($root . '/plugin.json'), true, 512, JSON_THROW_ON_ERROR);
 $check(($manifest['name'] ?? '') === 'smtp-jyavani', 'manifest uses the stable smtp-jyavani identity');
 $check(($manifest['version'] ?? '') === '1.0.0', 'manifest publishes version 1.0.0');
+$check(($manifest['plugin_uri'] ?? '') === 'https://jyavani.com/plugin/smtp-jyavani/', 'manifest links to the canonical Store detail page');
+$check(($manifest['store'] ?? null) === ['url' => 'https://jyavani.com/plugin-store', 'slug' => 'smtp-jyavani'],
+    'manifest declares its canonical Store update identity');
 $check(($manifest['requires']['jyavani'] ?? '') === '>=2.3.82', 'manifest requires the Core Mail API release');
 $requiredExtensions = $manifest['requires']['extensions'] ?? [];
 foreach (['json', 'mbstring', 'openssl', 'pdo', 'sodium'] as $extension) {

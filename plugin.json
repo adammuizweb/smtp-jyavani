@@ -5,10 +5,15 @@
   "description": "Secure SMTP and STARTTLS transport for the Jyavani Core Mail API.",
   "author": "Adam Muiz",
   "author_uri": "https://jyavani.com/member/adammuiz/",
+  "plugin_uri": "https://jyavani.com/plugin/smtp-jyavani/",
   "homepage": "https://github.com/adammuizweb/smtp-jyavani",
   "github_url": "https://github.com/adammuizweb/smtp-jyavani",
   "license": "MIT",
   "icon": "icon.svg",
+  "store": {
+    "url": "https://jyavani.com/plugin-store",
+    "slug": "smtp-jyavani"
+  },
   "requires": {
     "jyavani": ">=2.3.82",
     "php": ">=8.1",
